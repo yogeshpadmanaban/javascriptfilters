@@ -1,4 +1,4 @@
-var UserList = {name:"saran", age:"70", gender:"male", location:"madurai", doj:"11/01/2012", vehicle:"yes", city:"metropolitan",experience:"5"};
+
 var userdata = [{
     name: "raj",
     age: "30",
@@ -71,16 +71,7 @@ userSortByDoj();
 userSortByage();
 metropolitan();
 DateToString();
-duplicateName();
 
-
-function duplicateName(){
-    for (var i = 0; i < userdata.length; i++) {
-        if((userdata[i].name)==(userdata[i+1].name)){
-            console.log("duplicate");
-        }
-    }
-}
 
 function userList() {
     for (var i = 0; i < userdata.length; i++) {
