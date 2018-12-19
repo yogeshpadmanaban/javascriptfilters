@@ -1,13 +1,21 @@
 <html>
-    <head>
-       <title>demo</title> 
-      
-       <style>
-           body{
+
+<head>
+    <title>demo</title>
+<script>
+    document.getElementById("photo1").onclick=border;
+    function border()
+    {
+       // document.getElementById("photo1").colo="brown"
+               // document.body.style.color="brown";
+        }
+</script>
+    <style>
+        body{
             width: 800px;
   margin: 0 auto;
   background-color:burlywood;
-  padding: 20px 120px 20px 20px;
+  padding: 120px 120px 120px 120px;
   border: 2px solid black;
 
            }
@@ -21,6 +29,7 @@
            h3{
                text-align: left;
                font-style: normal;
+           font-weight: normal;
            }
            
            li{
@@ -28,37 +37,71 @@
           
            }
            img{
+               
                float: left;
                padding: 20px 20px 20px 20px;
            
            }
            
-       </style>
-        <script>
-                function myfuction()
-                {
-                    alert("WELCOME USER");
-                }
-            </script>
-    </head>
-    <body>
-        <form name="demo" method="POST" action="demo.html" onsubmit="myfuction()">
-                <table>
-                        <h1 style=color:white;text-align:center>Summer Holiday</h1>
+           #photo1:active{
+    
+    border-style:double;
+    border-color:brown;
 
-                        <ul>
-                            <li>
-                         <img src="/home/css/Downloads/taj.jpeg"><p><h2>TAJ MAHAL</h2><h3>An immense mausoleum of white marble, built in Agra between 1631 and 1648 by order of the Mughal emperor Shah Jahan in memory of his favourite wife, the Taj Mahal is the jewel of Muslim art in India .</h3></p></li>
-                         <li>
-                             <br>
-                         <img src="/home/css/Downloads/sea.jpeg"><p><h2>SEA SHORE</h2><h3>An immense mausoleum of white marble, built in Agra between 1631 and 1648 by order of the Mughal emperor Shah Jahan in memory of his favourite wife, the Taj Mahal is the jewel of Muslim art in India .</h3></p></li>
-                          <li>
-                              <input type="submit" value="login">
-                          </li>
-                         </ul>
-                    </table>
-        </form>
-       
-           
-    </body>
-    </html>
+}
+#photo2:active{
+    
+    border-style:double;
+    border-color:brown;
+
+}
+       </style>
+    <script>
+        function myfuction() {
+            alert("WELCOME USER");
+        }
+    </script>
+</head>
+
+<body>
+    
+            <h1 style=color:white;text-align:center>Summer Holiday</h1>
+
+            <ul>
+                <li>
+                        <div id="photo1">
+                    <a href=""><img src="/home/css/Downloads/taj.jpeg" width="300px" height="150px"></a><br>
+                    <p>
+                        
+                        <h2>TAJ MAHAL</h2>
+                        <h3>An immense mausoleum of white marble, built in Agra between 1631 and 1648 by order of the
+                            Mughal emperor Shah Jahan in memory of his favourite wife, the Taj Mahal is the jewel of
+                            Muslim art in India .</h3><br>
+                        
+                    </p>
+                </div>
+                </li>
+        
+                <li>
+                        <br>
+                        <div id="photo2">
+                    <br>
+                   <a href=""><img src="/home/css/Downloads/sea.jpeg" width="300px" height="150px"></a>
+                    <p>
+                           
+                        <h2>SEA SHORE</h2>
+                        <h3>An immense mausoleum of white marble, built in Agra between 1631 and 1648 by order of the
+                            Mughal emperor Shah Jahan in memory of his favourite wife, the Taj Mahal is the jewel of
+                            Muslim art in India .</h3><br>
+                            
+                    </p>
+                </div>
+                </li>
+                
+            </ul>
+        
+
+
+</body>
+
+</html>

@@ -1,15 +1,22 @@
 <html>
     <head>
-        <title>
-            date
-        </title>
         <script>
-            var date=new date();
-            document.getElementById("sample").innerHTML=date;
-        </script>
+            function makeid() {
+                alert("welcome");
+    var text = "welcome";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  
+    for (var i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return text;
+  }
+  
+  console.log(makeid());
+            </script>
     </head>
     <body>
-<p id="samplels"></p>
-    </body>
-
+        <button onclick="return makeid();">click me</button>    </body>
 </html>
+
+

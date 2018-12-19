@@ -7,7 +7,9 @@
         color:darkblue;
     }
     
+    
     #img{
+        
         float: right;
         padding: 20px 120px 20px 20px;
     }
@@ -74,14 +76,32 @@
     
      </style>
       <script>
-    
+  
+    var a=parseInt (document.getElementById("txt1").value);
+    var b=parseInt(document.getElementById("txt2").value);
 function addition()
 {
-    var a=document.getElementById("txt1").value;
-    var b=document.getElementById("txt2").value;
-    var x=Number(a)+Number(b);
+
+    
+    var c=Number(a)-Number(b);
+   //document.write(c);
+   alert("Addition is  "  +(c));
+  // document.getElementById("divide").innerHTML =Number(a) + Number(b); 
+    /*if((a==0)||(b==0))
+    {
+        alert("Enter number");
+        document.getElementById("txt1").focus();
+        return false;
+         
+    }
+   
+    else{
+        var x=Number(a)+Number(b);
     //document.getElementById("result").innerHTML=(x);
     alert("Addition is   "  + x);
+    return true;
+    }*/
+   
    
     
 }
@@ -109,8 +129,8 @@ function division()
     var a=document.getElementById("txt1").value;
     var b=document.getElementById("txt2").value;
    var e=Number(a) / Number(b);
-    alert("Division is  "  + e);
-    
+    //alert("Division is  "  + e);
+   // document.getElementById("divide").innerHTML =Number(a) / Number(b);
     
 }
                 
@@ -166,17 +186,20 @@ function division()
                                     <td><input type="submit" value="subtraction" onclick="subtraction()"></td>
                                 </tr>
                                 <tr>                                    <td><input type="submit" value="multiplication" onclick="multiplication()"></td>
-                                    <td><input type="submit" value="division" onclick="division()"></td>
+                                    <td><input type="button" value="division" onclick="division()"></td>
                                 </tr>
                                 <tr>
-                              
+                                       <td><p>The Result is :  <span id = "divide"></span>    
+                                       </td> 
+                                        </tr>
+                                   
                             </tr>
-                                    
+                            
                             </table>
                         </div>
-                            
-                  
+                        
                     </form>
+                    
                     
                 </div>
                 <div id="footer">
