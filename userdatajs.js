@@ -18,18 +18,18 @@ var userdata = [{
     vehicle:"yes",
     city:"metropolitan",
     experience:"2"
+
 }, {
     name: "barath",
     age: "60",
     gmail: "b@gmail.com",
     location:"chennai",
-    doj:"December 12, 2018",
+    doj:"December 18, 2017",
     vehicle:"no",
-    city:"no",
-    experience:"5"
-},
-{
-    name: "sai",
+    city:"metropolitan",
+    experience:"2"
+},{
+    name: "chandru",
     age: "45",
     gmail: "ss@gmail.com",
     location:"chennai",
@@ -70,7 +70,17 @@ userFilterByName();
 userSortByDoj();
 userSortByage();
 metropolitan();
+DateToString();
+duplicateName();
 
+
+function duplicateName(){
+    for (var i = 0; i < userdata.length; i++) {
+        if((userdata[i].name)==(userdata[i+1].name)){
+            console.log("duplicate");
+        }
+    }
+}
 
 function userList() {
     for (var i = 0; i < userdata.length; i++) {
@@ -86,6 +96,13 @@ function userSortByDoj(){
     })
     console.log(d);
 
+}
+function DateToString(){
+    var d=userdata.filter(function(a){
+        var date= new Date(a.doj);
+        return date.toDateString()
+    })
+    console.log(d);
 }
 
 function dateJoining(){
@@ -159,5 +176,7 @@ function metropolitan(){
     })
     console.log("User in metropolitan city"+metro);
 }
+
+
 
 
