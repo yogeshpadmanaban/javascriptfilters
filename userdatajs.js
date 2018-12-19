@@ -78,13 +78,29 @@ function userList() {
 	}
 }
 
+
+function userSortByDoj(){
+    var d=userdata.sort(function(a, b){
+        var date1=new Date(a.doj), date2=new Date(b.doj)
+        return date1-date2 //sort by date ascending
+    })
+    console.log(d);
+
+}
+
 function dateJoining(){
     for (var i = 0; i < userdata.length; i++) {
         console.log(userdata[i].name+" "+userdata[i].doj);
 	}
 
 }
-
+function userFilterByName(){
+    var user= userdata.filter(function(data){
+        return data.name == "sarath";
+        
+    });
+    console.log(user);
+}
 function experienceStatus(){
     for (var i = 0; i < userdata.length; i++) {
         if((userdata[i].experience<=2)){
@@ -129,21 +145,6 @@ function userVehicle(){
 
 }
 
-function userFilterByName(){
-    var user= userdata.filter(function(data){
-        return data.name == "sarath";
-        
-    });
-    console.log(user);
-}
-function userSortByDoj(){
-    var d=userdata.sort(function(a, b){
-        var date1=new Date(a.doj), date2=new Date(b.doj)
-        return date1-date2 //sort by date ascending
-    })
-    console.log(d);
-
-}
 function userSortByage(){
     var age=userdata.sort(function(a, b){
         var age1=a.age, age2=b.age
