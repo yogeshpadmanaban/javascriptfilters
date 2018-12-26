@@ -1,7 +1,7 @@
 
 function concat() {
 	var value = 'Today';
-	var value = value.concat(' is', ' monday');
+	value = value.concat(' is', ' monday');
 	console.log(value);
 }
 concat();
@@ -62,7 +62,7 @@ function wordOccurences(passedInput, valueCheck) {
 	}
 	console.log(count);
 }
-wordOccurences("The waterfall was so high, that the child couldn’t see its peak.",
+wordOccurences("The waterfall the was so high, that the child couldn’t see its peak.",
 	"the");
 
 var car = [{
@@ -80,7 +80,7 @@ var car = [{
 	gear_type: "auto",
 	no_of_cars_sold: "500",
 	killometers_runned: "2000",
-	date_of_launch: "January 18, 2010",
+	date_of_launch: "01/18/2010",
 	date_of_manufacture: "2005"
 }, {
 	brand: "ford",
@@ -97,7 +97,7 @@ var car = [{
 	gear_type: "manual",
 	no_of_cars_sold: "400",
 	killometers_runned: "2000",
-	date_of_launch: "February 18, 2010",
+	date_of_launch: "02/18/2010",
 	date_of_manufacture: "2007"
 }, {
 	brand: "skoda",
@@ -114,7 +114,7 @@ var car = [{
 	gear_type: "manual",
 	no_of_cars_sold: "500",
 	killometers_runned: "1500",
-	date_of_launch: "June 18, 2010",
+	date_of_launch: "06/18/2010",
 	date_of_manufacture: "2010"
 }
 
@@ -135,7 +135,7 @@ var newCar = {
 	rearcamera: "yes",
 	no_of_cars_sold: "500",
 	killometers_runned: "1500",
-	date_of_launch: "July 18, 2010",
+	date_of_launch: "07/18/2010",
 	date_of_manufacture: "25-01-2017"
 
 };
@@ -148,21 +148,21 @@ function addNew() {
 		console.log(car[i].brand + " " + car[i].color + " " + car[i].date_of_launch + " " + car[i].date_of_manufacture + " " + car[i].engine_power + " " + car[i].fuel);
 	}
 }
-
+	
 console.log("*******rearcamera update************");
 rearcameraUpdate();
-function rearcameraUpdate() {
+/*function rearcameraUpdate(){	
 	for(var i=0;i<car.length;i++){
-		car.push({rearcamera:false});
+		car.push({});
 	}
 	console.log(car);
-}
-/*function rearcameraUpdate() {
+}*/
+function rearcameraUpdate() {
 	let oi = car.findIndex((obj => obj.rearcamera = "true"));
 	car[oi].rearcamera = "false"
 	console.log("After update: ", car[oi])
 
-}*/
+}
 console.log("*******direction update************");
 directionUpdate();
 function directionUpdate() {
@@ -238,10 +238,13 @@ function manufactureDate() {
 console.log("*******launched car between specific date************");
 listofLaunchedcar();
 function listofLaunchedcar() {
+	var count=1;
 	for (var i = 0; i < car.length; i++)
-		if ((car[i].date_of_launch <= "December 18, 2010") && (car[i].date_of_launch > "March 18, 2010")) {
-			console.log(car[i].brand + " " + car[i].date_of_launch);
+		if ((car[i].date_of_launch >= "03/18/2010") && (car[i].date_of_launch < "12/18/2010")) {
+			c=count++;
+			console.log("launched car between specific date is "+c+" " +car[i].brand + " " + car[i].date_of_launch);
 		}
+
 }
 
 console.log("*******Auto geared car************");
