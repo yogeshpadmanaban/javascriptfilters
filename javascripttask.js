@@ -102,7 +102,7 @@ var car = [{
 }, {
 	brand: "skoda",
 	model_no: "kk10",
-	type: "mini",
+	type: "sedan",
 	gear: "neutral",
 	rearcamera: "true",
 	direction: "left",
@@ -283,31 +283,75 @@ function concatArray() {
 	console.log(concat);
 }
 
+console.log("*******count no of mini type cars************");
+countMinitype();
+function countMinitype() {
+	var count = 0;
+	for (var i = 0; i < car.length; ++i) {
+		if (car[i].type == "mini") {
+			console.log(car[i].brand + " " + car[i].type);
+			count++;
+			console.log(count + " no of mini cars");
+		}
+		
+	}
+}
 
+console.log("*******count no of sedan type cars************");
+countSedantype();
+function countSedantype() {
+	var count = 0;
+	for (var i = 0; i < car.length; ++i) {
+		if (car[i].type == "sedan") {
+			console.log(car[i].brand + " " + car[i].type);
+			count++;
+			console.log(count + " no of sedan cars");
+			}
+	}
+}
 
+console.log("*******remove mini car************");
+removeMinicar();
+function removeMinicar(){
+	for (var i = 0; i < car.length; ++i) {
+		if (car[i].type == "mini") {
+			delete car[i].type;
+			console.log(car[i].brand+" mini removed from array");
+			}
+	}
+}
 
-/*addNewReminder();
-function addNewReminder(){
-	var newReminder =[ {
-	  "method": 'popup',
-	  "minutes": '20'
-	},{
-		"method": 'popup',
-		"minutes": '20'
-	  }];
+/*console.log("*******count no of car type************");
+countCartype();
+function countCartype() {
+	var count = 0;
+	for (var i = 0; i < car.length; ++i) {
+		if (car[i].type == "mini") {
 
-	var reminders = [{
-			  "method": 'popup',
-			  "minutes": ''
-			}, {
-				"method": 'email',
-				"minutes": '10'
-			}];
+			console.log(car[i].brand + " " + car[i].type);
+			count++;
+			console.log(count + " no of mini cars");
+		}
+		else if (car[i].type == "sedan") {
 
-  reminders = reminders.push(newReminder);
-  //document.getElementById("demo").innerHTML = reminders;
-  console.log(newReminders);
+			console.log(car[i].brand + " " + car[i].type);
+			count++;
+			console.log(count + " no of sedan cars");
+		}
+		else if (car[i].type == "prime") {
+
+			console.log(car[i].brand + " " + car[i].type);
+			count++;
+			console.log(count + " no of prime cars");
+		}
+	}
 }*/
+
+
+
+
+
+
 
 
 
