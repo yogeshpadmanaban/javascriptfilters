@@ -70,7 +70,7 @@ var car = [{
 	model_no: "ss02",
 	type: "mini",
 	gear: "2",
-	rearcamera: "false",
+	//rearcamera: "false",
 	direction: "left",
 	color: "gray",
 	fuel: "petrol",
@@ -87,7 +87,7 @@ var car = [{
 	model_no: "ff05",
 	type: "sedan",
 	gear: "1",
-	rearcamera: "true",
+	//rearcamera: "true",
 	direction: "left",
 	color: "white",
 	fuel: "petrol",
@@ -104,7 +104,7 @@ var car = [{
 	model_no: "kk10",
 	type: "sedan",
 	gear: "neutral",
-	rearcamera: "true",
+	//rearcamera: "true",
 	direction: "left",
 	color: "brown",
 	fuel: "diesel",
@@ -124,7 +124,7 @@ var newCar = {
 	model_no: "kk10",
 	type: "mini",
 	gear: "3",
-	rearcamera: "true",
+	//rearcamera: "true",
 	direction: "left",
 	color: "brown",
 	fuel: "diesel",
@@ -152,12 +152,17 @@ function addNew() {
 console.log("*******rearcamera update************");
 rearcameraUpdate();
 function rearcameraUpdate() {
+	for(var i=0;i<car.length;i++){
+		car.push({rearcamera:false});
+	}
+	console.log(car);
+}
+/*function rearcameraUpdate() {
 	let oi = car.findIndex((obj => obj.rearcamera = "true"));
-	//console.log("Before update: ", update[oi])
 	car[oi].rearcamera = "false"
 	console.log("After update: ", car[oi])
 
-}
+}*/
 console.log("*******direction update************");
 directionUpdate();
 function directionUpdate() {
@@ -320,6 +325,29 @@ function removeMinicar(){
 			}
 	}
 }
+
+
+console.log("*******javascript class************");
+function jsclass(){
+	this.brand= "skoda",
+	this.model_no="kk10",
+	this.type= "sedan",
+	this.gear= "neutral",
+	this.rearcamera= "true",
+	this.direction= "left",
+	this.color= "brown",
+	this.fuel= "diesel",
+	this.engine_power= "900",
+	this.fuel_capacity= "9",
+	this.mileage= "20",
+	this.gear_type= "manual",
+	this.no_of_cars_sold= "500",
+	this.killometers_runned= "1500",
+	this.date_of_launch= "June 18, 2010",
+	this.date_of_manufacture= "2010"
+}
+var jclass=new jsclass();
+console.log("car brandname "+jclass.brand+" ,car type "+jclass.type+" ,car model "+jclass.model_no+" ,car color "+jclass.color);
 
 /*console.log("*******count no of car type************");
 countCartype();
