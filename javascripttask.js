@@ -21,12 +21,13 @@ function replaceword() {
 }
 replaceword();
 
-function firstletterUpper() {
-	var string = 'all the letters are in small case';
-	var change = string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-	console.log(change);
-}
-firstletterUpper();
+function firstletterUpper(str)
+	{
+	 return str.replace(/\w\S*/g, function(txt){
+		 return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	}
+	console.log(firstletterUpper('every letter in first of sentence (capitalize)'));
+
 
 function palindrome() {
 	var string = 'NITIN';
@@ -388,13 +389,13 @@ function jsclass(changegear, direction, rstate) {
 		return this.gear;
 	};
 
-	this.gearr = function (value) {
+	this.gearr = function () {
 		if (this.gear == 1) {
 			this.runningstate = "100km"
-			return this.rstate;
+			return this.runningstate;
 		} else if (this.gear == 2) {
 			this.runningstate = "200km"
-			return this.rstate;
+			return this.runningstate;
 		}
 		else {
 			return ("neutral state");
@@ -415,7 +416,8 @@ function jsclass(changegear, direction, rstate) {
 var carUpdate = new jsclass();
 console.log("car is in " + carUpdate.direction("right") + " direction");
 console.log("car is in " + carUpdate.gear("2") + " gear");
-console.log(carUpdate.gearr("2"));
+//console.log(carUpdate.gearr("2"));
+console.log(carUpdate.gearr())
 console.log("car mileage is "+carUpdate.mileage());
 
 
@@ -425,19 +427,99 @@ console.log("car mileage is "+carUpdate.mileage());
 
 
 
+function Carclass(brand){
+		this.brand = brand,
+		this.model_no = "kk10",
+		this.type = "sedan",
+		this.rearcamera = "true",
+		this.color = "brown",
+		this.fuel = "diesel",
+		this.engine_power = "900",
+		this.direction=null;
+		this.gear_type = "manual",
+		this.no_of_cars_sold = "500",
+		this.date_of_launch = "June 18, 2010",
+		this.date_of_manufacture = "2010"
+	  this.fuelCapacity = 10;
+		this.capacityUnit = 'litres';
+		this.direction = null;
+		this.currentGearPosition = 0;
+		this.kilometersRunned = 0; 
+		this.mileage = 0;
+		this.turnToDirection = function(direction) {
+		this.direction = direction;
 
+}
+		this.getDirection = function() {
+		console.log(this.brand + " direction is "+ this.direction);
+		return this.direction;
+	}
+	this.changeGear = function(gear) {
+		switch (gear) {
+		case 0: {
+		break;
+		}
+		case 1 : {
+		this.kilometersRunned = this.kilometersRunned + 100;
+		break;
+		}
+		
+		case 2 : {
+		this.kilometersRunned = this.kilometersRunned + 500;
+		break;
+		}
+		
+		case 3 : {
+		this.kilometersRunned = this.kilometersRunned + 800;
+		break;
+		}
+		
+		case 4 : {
+		this.kilometersRunned = this.kilometersRunned + 900;
+		break;
+		}
+		}
+		updateFuelCapacity();
+		}
+		
+		function updateFuelCapacity() {
+		
+		}
+		
+		this.fillFuel = function(litres) {
+		this.fuelCapacity = this.fuelCapacity + litres;
+		}
+		
+		this.getFuelCapacity = function() {
+		console.log(this.brand + ' fuel capacity is '+ this.fuelCapacity);
+		console.log(this.brand+ ' total kilometers runned '+ this.kilometersRunned);
+		}
+	}
+		
+		var myCar1 = new Carclass('Skoda');
+		var myCar2 = new Carclass('Toyato');
+	
+	
+		myCar1.fillFuel(20);
+		myCar1.changeGear(1);
+		myCar1.changeGear(2);
+		myCar1.changeGear(3);
+		myCar1.changeGear(4);
+		myCar1.changeGear(4);
+		myCar1.changeGear(4);
+		myCar1.changeGear(4);
+		myCar1.changeGear(3);
+		myCar1.changeGear(2);
+		myCar1.changeGear(1);
+		myCar1.changeGear(0);
+		myCar1.turnToDirection('left');
+		myCar1.getDirection();
+		myCar1.getFuelCapacity();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+		myCar2.fillFuel(20);
+		myCar2.changeGear(3);
+		myCar2.changeGear(0);
+		myCar2.turnToDirection('left');
+		myCar2.getDirection();
+		myCar2.getFuelCapacity();
 
