@@ -148,7 +148,7 @@ function addNew() {
 		console.log(car[i].brand + " " + car[i].color + " " + car[i].date_of_launch + " " + car[i].date_of_manufacture + " " + car[i].engine_power + " " + car[i].fuel);
 	}
 }
-	
+
 console.log("*******rearcamera update************");
 rearcameraUpdate();
 /*function rearcameraUpdate(){	
@@ -238,11 +238,11 @@ function manufactureDate() {
 console.log("*******launched car between specific date************");
 listofLaunchedcar();
 function listofLaunchedcar() {
-	var count=1;
+	var count = 1;
 	for (var i = 0; i < car.length; i++)
 		if ((car[i].date_of_launch >= "03/18/2010") && (car[i].date_of_launch < "12/18/2010")) {
-			c=count++;
-			console.log("launched car between specific date is "+c+" " +car[i].brand + " " + car[i].date_of_launch);
+			c = count++;
+			console.log("launched car between specific date is " + c + " " + car[i].brand + " " + car[i].date_of_launch);
 		}
 
 }
@@ -301,7 +301,7 @@ function countMinitype() {
 			count++;
 			console.log(count + " no of mini cars");
 		}
-		
+
 	}
 }
 
@@ -314,69 +314,112 @@ function countSedantype() {
 			console.log(car[i].brand + " " + car[i].type);
 			count++;
 			console.log(count + " no of sedan cars");
-			}
+		}
 	}
 }
 
 console.log("*******remove mini car************");
 removeMinicar();
-function removeMinicar(){
+function removeMinicar() {
 	for (var i = 0; i < car.length; ++i) {
 		if (car[i].type == "mini") {
-			delete car[i].type;
-			console.log(car[i].brand+" mini removed from array");
-			}
+			car.slice(i, 1);
+			//	delete car[i].type;
+			console.log(car[i].brand + " mini removed from array");
+		}
 	}
 }
+function createCar(type, model, color, brand, fueltype, yearofmanufacture, enginepower, geartype, dateoflaunch, mileage, KMrunned, fuelcapacity, rearcamera, direction, gear) {
+	this.type = type;
+	this.model = model;
+	this.color = color;
+	this.brand = brand;
+	this.fueltype = fueltype;
+	this.yearofmanufacture = yearofmanufacture;
+	this.enginepower = enginepower;
+	this.geartype = geartype;
+	this.dateoflaunch = dateoflaunch;
+	this.mileage = mileage;
+	this.KMrunned = KMrunned;
+	this.fuelcapacity = fuelcapacity;
+	this.rearcamera = rearcamera;
+	this.direction = direction;
+	this.gear = gear;
+
+
+	this.turnLeft = function () {
+		this.direction = "left";
+	};
+
+}
+
+
+
+
 
 
 console.log("*******javascript class************");
-function jsclass(){
-	this.brand= "skoda",
-	this.model_no="kk10",
-	this.type= "sedan",
-	this.gear= "neutral",
-	this.rearcamera= "true",
-	this.direction= "left",
-	this.color= "brown",
-	this.fuel= "diesel",
-	this.engine_power= "900",
-	this.fuel_capacity= "9",
-	this.mileage= "20",
-	this.gear_type= "manual",
-	this.no_of_cars_sold= "500",
-	this.killometers_runned= "1500",
-	this.date_of_launch= "June 18, 2010",
-	this.date_of_manufacture= "2010"
+function jsclass(changegear, direction, rstate) {
+	this.brand = "skoda",
+		this.model_no = "kk10",
+		this.type = "sedan",
+		this.gear = changegear,
+		this.rearcamera = "true",
+		this.direction = direction,
+		this.color = "brown",
+		this.fuel = "diesel",
+		this.engine_power = "900",
+		this.fuel_capacity = "9",
+		this.mileage = "20",
+		this.gear_type = "manual",
+		this.no_of_cars_sold = "500",
+		this.killometers_runned = "1500",
+		this.date_of_launch = "June 18, 2010",
+		this.date_of_manufacture = "2010"
+	  this.runningstate = rstate
+
+	this.direction = function (value) {
+		this.direction = value;
+		return this.direction;
+	};
+
+	this.gear = function (value) {
+		this.gear = value;
+		return this.gear;
+	};
+
+	this.gearr = function (value) {
+		if (this.gear == 1) {
+			this.runningstate = "100km"
+			return this.rstate;
+		} else if (this.gear == 2) {
+			this.runningstate = "200km"
+			return this.rstate;
+		}
+		else {
+			return ("neutral state");
+		}
+
+	};
+	this.mileage = function(){
+		if (this.gear == 1) {
+		var m=100 / 5.5;
+		return (m);
+		}
+		else if (this.gear == 2){
+		var m=200 / 5.5;
+		return (m);
+		}
+	};
 }
-var jclass=new jsclass();
-console.log("car brandname "+jclass.brand+" ,car type "+jclass.type+" ,car model "+jclass.model_no+" ,car color "+jclass.color);
+var carUpdate = new jsclass();
+console.log("car is in " + carUpdate.direction("right") + " direction");
+console.log("car is in " + carUpdate.gear("2") + " gear");
+console.log(carUpdate.gearr("2"));
+console.log("car mileage is "+carUpdate.mileage());
 
-/*console.log("*******count no of car type************");
-countCartype();
-function countCartype() {
-	var count = 0;
-	for (var i = 0; i < car.length; ++i) {
-		if (car[i].type == "mini") {
 
-			console.log(car[i].brand + " " + car[i].type);
-			count++;
-			console.log(count + " no of mini cars");
-		}
-		else if (car[i].type == "sedan") {
 
-			console.log(car[i].brand + " " + car[i].type);
-			count++;
-			console.log(count + " no of sedan cars");
-		}
-		else if (car[i].type == "prime") {
-
-			console.log(car[i].brand + " " + car[i].type);
-			count++;
-			console.log(count + " no of prime cars");
-		}
-	}
-}*/
 
 
 
